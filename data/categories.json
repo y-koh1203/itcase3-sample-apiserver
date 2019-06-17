@@ -1,0 +1,57 @@
+{
+    "major_categories": [
+        {
+            "id": 1,
+            "name": "スーツケース"
+        },
+        {
+            "id": 2,
+            "name": "バッグ"
+        },
+        {
+            "id": 3,
+            "name": "ポーチ"
+        },
+        {
+            "id": 4,
+            "name": "海外用電化製品"
+        }
+    ],
+    "minor_categories": [
+        {
+            "id": 1,
+            "name": "スーツケースS",
+            "major_id": 1
+        },
+        {
+            "id": 6,
+            "name": "ネームタグ",
+            "major_id": 1
+        },
+        {
+            "id": 7,
+            "name": "ショルダーバッグ",
+            "major_id": 2
+        },
+        {
+            "id": 11,
+            "name": "トラベルポーチ",
+            "major_id": 3
+        },
+        {
+            "id": 14,
+            "name": "カメラ",
+            "major_id": 4
+        },
+        {
+            "id": 17,
+            "name": "モバイルバッテリー",
+            "major_id": 4
+        },
+        {
+            "id": 19,
+            "name": "翻訳機",
+            "major_id": 4
+        }
+    ]
+}
