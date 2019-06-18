@@ -5,6 +5,7 @@
  */
 const express = require("express");
 const cors = require("cors");
+const { check, validationResult } = require("express-validator/check");
 
 /**
  * JSONデータのインポート
@@ -23,15 +24,31 @@ const port = 1337;
 app.use(cors());
 
 /**
- * Task: 
+ * Task:
  * express validatorの導入
  * ルーティングをPOSTに変更
  * APIからパラメーターを受け取れるように
  */
 
-app.get("/categories", (req, res) => {
-  return res.status(200).json(categories);
-});
+app.post(
+  "/categories",
+  [
+    check("country")
+      .not()
+      .isEmpty(),
+    check("range")
+      .not()
+      .isEmpty()
+  ],
+  (req, res) => {
+    // validation
+    const error = validationResult(req);
+    if (!error.isEmpty()) {
+      return res.status(400).json({ message: 'invalid request.' });
+    }
+    return res.status(200).json(categories);
+  }
+);
 
 app.get("/products", (req, res) => {
   return res.status(200).json(products);
