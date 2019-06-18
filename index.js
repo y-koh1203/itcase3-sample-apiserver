@@ -22,6 +22,13 @@ const port = 1337;
 // CORSを許可する
 app.use(cors());
 
+/**
+ * Task: 
+ * express validatorの導入
+ * ルーティングをPOSTに変更
+ * APIからパラメーターを受け取れるように
+ */
+
 app.get("/categories", (req, res) => {
   return res.status(200).json(categories);
 });
