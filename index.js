@@ -30,10 +30,8 @@ app.post(
   "/categories",
   [
     check("country")
-      .not()
       .isEmpty(),
     check("range")
-      .not()
       .isEmpty()
   ],
   (req, res) => {
@@ -55,7 +53,6 @@ app.post(
   "/products",
   [
     check("category_id")
-      .not()
       .isEmpty()
   ],
   (req, res) => {
@@ -73,13 +70,22 @@ app.post(
 /**
  * product_idを元に、商品データ(単体)をJSONで返却
  */
-app.get("/products/:product_id", (req, res) => {
+app.post("/products/:product_id", (req, res) => {
   return res.status(200).json(product);
 });
 
+/**
+ * 存在しないリソースを指定された時に、404を返却
+ */
 app.get("*", (req, res) => {
   return res.status(404).json({
-    messeage: "resource not found"
+    messeage: "resource not found."
+  });
+});
+
+app.post("*", (req, res) => {
+  return res.status(404).json({
+    messeage: "resource not found."
   });
 });
 
