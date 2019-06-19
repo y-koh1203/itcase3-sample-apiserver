@@ -5,7 +5,7 @@
     "price": 0,
     "image": "https://item-shopping.c.yimg.jp/i/g/nishikihara_millenia-fastener",
     "link": "https://store.shopping.yahoo.co.jp/nishikihara/millenia-fastener.html",
-    "stock": 3,
+    "stock": true,
     "freshness": "新品",
     "distinction": "Yahoo!ショッピング"
 }
